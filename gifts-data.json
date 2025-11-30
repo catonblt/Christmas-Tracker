@@ -39,7 +39,7 @@
     "child": "Scarlett",
     "description": "Robe",
     "price": 14.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 7,
