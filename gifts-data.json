@@ -1,16 +1,16 @@
 [
   {
     "number": 1,
-    "child": "Renn",
-    "description": "Poopy eating kit.",
-    "price": 255,
-    "wrapped": true
+    "child": "",
+    "description": "",
+    "price": 0,
+    "wrapped": false
   },
   {
     "number": 2,
-    "child": "Teagan",
-    "description": "Dog",
-    "price": 20,
+    "child": "",
+    "description": "",
+    "price": 0,
     "wrapped": false
   },
   {
