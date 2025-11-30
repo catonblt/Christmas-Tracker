@@ -22,23 +22,23 @@
   },
   {
     "number": 4,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Addie",
+    "description": "Track Suit",
+    "price": 19.99,
     "wrapped": false
   },
   {
     "number": 5,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Teagan",
+    "description": "Eyelashes",
+    "price": 9.99,
     "wrapped": false
   },
   {
     "number": 6,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Robe",
+    "price": 14.99,
     "wrapped": false
   },
   {
