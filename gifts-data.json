@@ -81,7 +81,7 @@
     "child": "Addie",
     "description": "Gold Eye Masks",
     "price": 12.74,
-    "wrapped": true
+    "wrapped": false
   },
   {
     "number": 13,
@@ -120,58 +120,58 @@
   },
   {
     "number": 18,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Hair Brush",
+    "price": 4.99,
     "wrapped": false
   },
   {
     "number": 19,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Face Masks",
+    "price": 9.99,
     "wrapped": false
   },
   {
     "number": 20,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Notebook",
+    "price": 5.99,
     "wrapped": false
   },
   {
     "number": 21,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Lip Mask",
+    "price": 4.99,
     "wrapped": false
   },
   {
     "number": 22,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Snuggle Buddy",
+    "price": 14.99,
     "wrapped": false
   },
   {
     "number": 23,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Bath Bomb",
+    "price": 1.25,
     "wrapped": false
   },
   {
     "number": 24,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Pez Dispenser",
+    "price": 1.99,
     "wrapped": false
   },
   {
     "number": 25,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Renn",
+    "description": "Pez Dispenser",
+    "price": 1.99,
     "wrapped": false
   },
   {
