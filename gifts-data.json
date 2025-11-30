@@ -8,9 +8,9 @@
   },
   {
     "number": 2,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Cat",
+    "price": 40,
     "wrapped": false
   },
   {
