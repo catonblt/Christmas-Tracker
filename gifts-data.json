@@ -22,9 +22,9 @@
   },
   {
     "number": 4,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Addie",
+    "description": "House ",
+    "price": 40000,
     "wrapped": false
   },
   {
