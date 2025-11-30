@@ -1,16 +1,16 @@
 [
   {
     "number": 1,
-    "child": "Scarlett",
-    "description": "hahaha",
-    "price": 10,
+    "child": "",
+    "description": "",
+    "price": 0,
     "wrapped": false
   },
   {
     "number": 2,
-    "child": "Addie",
-    "description": "cheese",
-    "price": 20,
+    "child": "",
+    "description": "",
+    "price": 0,
     "wrapped": false
   },
   {
