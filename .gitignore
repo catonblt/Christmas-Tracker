@@ -1,0 +1,10 @@
+# Editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Local data (will be stored in GitHub via the app)
+*.local
+
+# Logs
+*.log
