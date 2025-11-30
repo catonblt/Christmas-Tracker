@@ -2,22 +2,22 @@
   {
     "number": 1,
     "child": "Teagan",
-    "description": "Flowers",
-    "price": 30,
+    "description": "Bracelet",
+    "price": 16.99,
     "wrapped": false
   },
   {
     "number": 2,
-    "child": "Renn",
-    "description": "Mittens",
-    "price": 30,
+    "child": "Scarlett",
+    "description": "Fidget Ball",
+    "price": 11.99,
     "wrapped": false
   },
   {
     "number": 3,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Nail Polish",
+    "price": 5.99,
     "wrapped": false
   },
   {
