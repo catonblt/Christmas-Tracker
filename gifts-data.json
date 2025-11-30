@@ -67,14 +67,14 @@
     "child": "Addie",
     "description": "Bubble",
     "price": 11.98,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 11,
     "child": "Addie",
     "description": "Bubble",
     "price": 11.98,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 12,
@@ -116,7 +116,7 @@
     "child": "Addie",
     "description": "Bubble ",
     "price": 9.58,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 18,
