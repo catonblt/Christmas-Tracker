@@ -46,7 +46,7 @@
     "child": "Addie",
     "description": "Loops Face Mask",
     "price": 14.39,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 8,
@@ -109,7 +109,7 @@
     "child": "Addie",
     "description": "Neato",
     "price": 9.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 17,
