@@ -60,7 +60,7 @@
     "child": "Addie",
     "description": "Hair Wax Stick",
     "price": 5.49,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 10,
@@ -88,7 +88,7 @@
     "child": "Addie",
     "description": "Makeup Brushes",
     "price": 7.58,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 14,
@@ -102,7 +102,7 @@
     "child": "Addie",
     "description": "Summer Fridays",
     "price": 34,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 16,
@@ -113,9 +113,9 @@
   },
   {
     "number": 17,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Addie",
+    "description": "Bubble ",
+    "price": 9.58,
     "wrapped": false
   },
   {
