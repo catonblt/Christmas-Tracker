@@ -172,7 +172,7 @@
     "child": "Renn",
     "description": "Pez Dispenser/stocking",
     "price": 1.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 26,
