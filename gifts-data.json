@@ -4,14 +4,14 @@
     "child": "Teagan",
     "description": "Flowers",
     "price": 20,
-    "wrapped": true
+    "wrapped": false
   },
   {
     "number": 2,
     "child": "Renn",
     "description": "Mittens",
     "price": 30,
-    "wrapped": true
+    "wrapped": false
   },
   {
     "number": 3,
