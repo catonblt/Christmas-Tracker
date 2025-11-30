@@ -1,17 +1,17 @@
 [
   {
     "number": 1,
-    "child": "",
-    "description": "",
-    "price": 0,
-    "wrapped": false
+    "child": "Teagan",
+    "description": "Flowers",
+    "price": 50,
+    "wrapped": true
   },
   {
     "number": 2,
-    "child": "",
-    "description": "",
-    "price": 0,
-    "wrapped": false
+    "child": "Renn",
+    "description": "Mittens",
+    "price": 30,
+    "wrapped": true
   },
   {
     "number": 3,
