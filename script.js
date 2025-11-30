@@ -4,7 +4,8 @@ const CONFIG = {
     owner: 'catonblt',
     token: '', // Will be set by user
     dataFile: 'gifts-data.json',
-    branch: 'main'
+    branch: 'main',
+    password: 'christmas2025' // Change this to your desired password
 };
 
 const KIDS = ['Teagan', 'Addie', 'Scarlett', 'Renn'];
@@ -17,13 +18,61 @@ let currentFilter = { kid: 'all', wrapped: 'all' };
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    checkPassword();
+});
+
+function checkPassword() {
+    const isAuthenticated = sessionStorage.getItem('authenticated');
+    
+    if (isAuthenticated === 'true') {
+        initApp();
+    } else {
+        showPasswordScreen();
+    }
+}
+
+function showPasswordScreen() {
+    document.getElementById('passwordOverlay').classList.remove('hidden');
+    document.getElementById('passwordInput').focus();
+    
+    document.getElementById('passwordSubmit').addEventListener('click', verifyPassword);
+    document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            verifyPassword();
+        }
+    });
+}
+
+function verifyPassword() {
+    const input = document.getElementById('passwordInput').value;
+    const errorEl = document.getElementById('passwordError');
+    
+    if (input === CONFIG.password) {
+        sessionStorage.setItem('authenticated', 'true');
+        document.getElementById('passwordOverlay').classList.add('hidden');
+        initApp();
+    } else {
+        errorEl.textContent = 'Incorrect password. Try again.';
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInput').focus();
+        
+        // Shake animation
+        const container = document.querySelector('.password-container');
+        container.style.animation = 'shake 0.5s';
+        setTimeout(() => {
+            container.style.animation = '';
+        }, 500);
+    }
+}
+
+function initApp() {
     loadConfig();
     initializeGifts();
     renderTable();
     setupEventListeners();
     updateSummary();
     loadFromGitHub();
-});
+}
 
 function loadConfig() {
     const stored = localStorage.getItem('github-config');
@@ -132,6 +181,7 @@ function setupEventListeners() {
     // Buttons
     document.getElementById('saveBtn').addEventListener('click', handleSaveToGitHub);
     document.getElementById('exportBtn').addEventListener('click', handleExport);
+    document.getElementById('importBtn').addEventListener('click', handleImport);
 
     // Modal
     document.getElementById('modalConfirm').addEventListener('click', handleModalConfirm);
@@ -205,6 +255,70 @@ function handleExport() {
     link.download = `christmas-gifts-${new Date().toISOString().split('T')[0]}.json`;
     link.click();
     URL.revokeObjectURL(url);
+}
+
+function handleImport() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/json';
+    
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const importedData = JSON.parse(event.target.result);
+                
+                // Validate the data structure
+                if (!Array.isArray(importedData)) {
+                    showModal('Import Error', 'Invalid file format. Please select a valid gift data file.');
+                    return;
+                }
+                
+                // Update gifts array
+                gifts = importedData;
+                
+                // Ensure all gifts have the required fields
+                gifts = gifts.map((gift, index) => ({
+                    number: gift.number || index + 1,
+                    child: gift.child || '',
+                    description: gift.description || '',
+                    price: parseFloat(gift.price) || 0,
+                    wrapped: gift.wrapped || false
+                }));
+                
+                // Pad to 100 gifts if needed
+                while (gifts.length < MAX_GIFTS) {
+                    gifts.push({
+                        number: gifts.length + 1,
+                        child: '',
+                        description: '',
+                        price: 0,
+                        wrapped: false
+                    });
+                }
+                
+                // Trim if too many
+                if (gifts.length > MAX_GIFTS) {
+                    gifts = gifts.slice(0, MAX_GIFTS);
+                }
+                
+                saveToLocalStorage();
+                renderTable();
+                updateSummary();
+                showModal('Import Successful', 'Your gift data has been imported successfully!');
+            } catch (error) {
+                console.error('Import error:', error);
+                showModal('Import Error', 'Failed to import file. Please make sure it\'s a valid JSON file.');
+            }
+        };
+        
+        reader.readAsText(file);
+    };
+    
+    input.click();
 }
 
 async function handleSaveToGitHub() {

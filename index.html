@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="passwordOverlay" class="password-overlay">
+        <div class="password-container">
+            <h2>🎄 Christmas Gift Tracker 🎄</h2>
+            <p>Enter password to continue</p>
+            <input type="password" id="passwordInput" placeholder="Password" autocomplete="off">
+            <button id="passwordSubmit" class="btn-primary">Unlock</button>
+            <p id="passwordError" class="password-error"></p>
+        </div>
+    </div>
+
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❅</div>
         <div class="snowflake">❆</div>
@@ -95,6 +105,7 @@
             </div>
             <button class="btn-save" id="saveBtn">💾 Save to GitHub</button>
             <button class="btn-secondary" id="exportBtn">📥 Export Data</button>
+            <button class="btn-secondary" id="importBtn">📤 Import Data</button>
         </div>
 
         <div class="table-container">
