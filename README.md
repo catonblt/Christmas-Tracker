@@ -50,21 +50,21 @@ For cloud sync to work, you need a GitHub Personal Access Token:
 3. Click **Generate new token** → **Generate new token (classic)**
 4. Give it a name like "Christmas Gift Tracker"
 5. Set expiration (recommend 1 year or no expiration)
-6. Check the **repo** scope (this gives full control of private repositories)
-7. Click **Generate token**
-8. **IMPORTANT**: Copy the token immediately - you won't be able to see it again!
+6. **For maximum security**: Use fine-grained permissions:
+   - Click your repository name
+   - Under "Repository permissions" set **Contents** to "Read and write"
+7. **OR** check the **repo** scope (gives broader access but simpler)
+8. Click **Generate token**
+9. **IMPORTANT**: Copy the token immediately - you won't be able to see it again!
 
 ### 5. Configure the App
 
 1. Open your Christmas Gift Tracker website
 2. Click the "💾 Save to GitHub" button
-3. Enter your details:
-   - **GitHub Username**: Your GitHub username
-   - **Repository Name**: `christmas-gift-tracker` (or whatever you named it)
-   - **Personal Access Token**: Paste the token you just created
+3. Enter your Personal Access Token (username and repo are already configured)
 4. Click OK
 
-Your settings will be saved in your browser, and you can now sync data across devices!
+Your token will be saved in your browser. You'll need to enter it once on each device you use.
 
 ## Usage
 

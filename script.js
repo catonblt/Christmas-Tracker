@@ -1,7 +1,7 @@
 // Configuration
 const CONFIG = {
-    repo: '', // Will be set by user
-    owner: '', // Will be set by user
+    repo: 'christmas-tracker',
+    owner: 'catonblt',
     token: '', // Will be set by user
     dataFile: 'gifts-data.json',
     branch: 'main'
@@ -229,20 +229,20 @@ async function handleSaveToGitHub() {
 function showGitHubSetupModal() {
     const modal = document.getElementById('modal');
     document.getElementById('modalTitle').textContent = 'GitHub Setup';
-    document.getElementById('modalMessage').textContent = 'Enter your GitHub repository details to enable cloud sync:';
+    document.getElementById('modalMessage').textContent = 'Enter your Personal Access Token to enable cloud sync:';
     
     document.getElementById('modalForm').innerHTML = `
-        <label for="githubOwner">GitHub Username/Organization:</label>
-        <input type="text" id="githubOwner" value="${CONFIG.owner}" placeholder="yourusername">
+        <label>GitHub Username:</label>
+        <input type="text" value="${CONFIG.owner}" disabled style="background: #f0f0f0; cursor: not-allowed;">
         
-        <label for="githubRepo">Repository Name:</label>
-        <input type="text" id="githubRepo" value="${CONFIG.repo}" placeholder="christmas-gift-tracker">
+        <label>Repository Name:</label>
+        <input type="text" value="${CONFIG.repo}" disabled style="background: #f0f0f0; cursor: not-allowed;">
         
         <label for="githubToken">Personal Access Token:</label>
-        <input type="password" id="githubToken" value="${CONFIG.token}" placeholder="ghp_...">
+        <input type="password" id="githubToken" value="${CONFIG.token}" placeholder="ghp_..." autofocus>
         <small style="display: block; margin-top: -0.5rem; color: var(--text-muted);">
             Create a token at: Settings → Developer settings → Personal access tokens → Tokens (classic)
-            <br>Required permissions: repo
+            <br>Required permissions: repo (or just Contents: Read and write for this repo only)
         </small>
     `;
 
@@ -251,21 +251,17 @@ function showGitHubSetupModal() {
 }
 
 function handleModalConfirm() {
-    const ownerInput = document.getElementById('githubOwner');
-    const repoInput = document.getElementById('githubRepo');
     const tokenInput = document.getElementById('githubToken');
 
-    if (ownerInput && repoInput && tokenInput) {
-        CONFIG.owner = ownerInput.value.trim();
-        CONFIG.repo = repoInput.value.trim();
+    if (tokenInput) {
         CONFIG.token = tokenInput.value.trim();
 
-        if (CONFIG.owner && CONFIG.repo && CONFIG.token) {
+        if (CONFIG.token) {
             saveConfig();
             closeModal();
             handleSaveToGitHub();
         } else {
-            showModal('Error', 'Please fill in all fields.');
+            showModal('Error', 'Please enter your Personal Access Token.');
             return;
         }
     } else {
