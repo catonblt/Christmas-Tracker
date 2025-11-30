@@ -142,9 +142,9 @@
   {
     "number": 21,
     "child": "Scarlett",
-    "description": "Lip Mask",
+    "description": "Lip Mask/stocking ",
     "price": 4.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 22,
