@@ -170,7 +170,7 @@
   {
     "number": 25,
     "child": "Renn",
-    "description": "Pez Dispenser",
+    "description": "Pez Dispenser/stocking",
     "price": 1.99,
     "wrapped": false
   },
