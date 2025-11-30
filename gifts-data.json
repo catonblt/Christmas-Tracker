@@ -156,9 +156,9 @@
   {
     "number": 23,
     "child": "Scarlett",
-    "description": "Bath Bomb",
+    "description": "Bath Bomb/stocking ",
     "price": 1.25,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 24,
