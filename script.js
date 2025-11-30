@@ -1,23 +1,175 @@
-// Configuration
+// ============================================
+// CHRISTMAS GIFT TRACKER - JAVASCRIPT
+// Nordic Winter Wonderland Edition
+// ============================================
+
+// ---------- Configuration ----------
 const CONFIG = {
     repo: 'christmas-tracker',
     owner: 'catonblt',
-    token: '', // Will be set by user
+    token: '',
     dataFile: 'gifts-data.json',
     branch: 'main',
-    password: 'christmas2025' // Change this to your desired password
+    password: 'christmas2025'
 };
 
 const KIDS = ['Teagan', 'Addie', 'Scarlett', 'Renn'];
 const BUDGET_PER_KID = 250;
 const MAX_GIFTS = 100;
 
-// State
+// ---------- State ----------
 let gifts = [];
 let currentFilter = { kid: 'all', wrapped: 'all' };
 
-// Initialize
+// ---------- Aurora Canvas Animation ----------
+class AuroraCanvas {
+    constructor() {
+        this.canvas = document.getElementById('auroraCanvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.time = 0;
+        this.resize();
+        window.addEventListener('resize', () => this.resize());
+        this.animate();
+    }
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    drawAurora() {
+        const { width, height } = this.canvas;
+        
+        // Clear canvas with base color
+        this.ctx.fillStyle = '#0a1628';
+        this.ctx.fillRect(0, 0, width, height);
+
+        // Draw multiple aurora layers
+        this.drawAuroraLayer(0.3, '#2d5f4a', 0.15, 0);
+        this.drawAuroraLayer(0.5, '#8b3a4c', 0.1, 1000);
+        this.drawAuroraLayer(0.7, '#d4a574', 0.08, 2000);
+        this.drawAuroraLayer(0.4, '#1a4a3a', 0.12, 3000);
+    }
+
+    drawAuroraLayer(yPosition, color, alpha, offset) {
+        const { width, height } = this.canvas;
+        const y = height * yPosition;
+        
+        this.ctx.save();
+        this.ctx.globalAlpha = alpha;
+        
+        const gradient = this.ctx.createRadialGradient(
+            width / 2 + Math.sin((this.time + offset) / 3000) * 200,
+            y + Math.cos((this.time + offset) / 2000) * 50,
+            0,
+            width / 2,
+            y,
+            width * 0.6
+        );
+        
+        gradient.addColorStop(0, color);
+        gradient.addColorStop(0.5, color + '80');
+        gradient.addColorStop(1, 'transparent');
+        
+        this.ctx.fillStyle = gradient;
+        this.ctx.beginPath();
+        
+        // Draw flowing wave shape
+        this.ctx.moveTo(0, height);
+        
+        for (let x = 0; x <= width; x += 20) {
+            const wave1 = Math.sin((x / 200) + (this.time + offset) / 2000) * 40;
+            const wave2 = Math.sin((x / 100) + (this.time + offset) / 3000) * 20;
+            const wave3 = Math.cos((x / 150) + (this.time + offset) / 2500) * 30;
+            this.ctx.lineTo(x, y + wave1 + wave2 + wave3);
+        }
+        
+        this.ctx.lineTo(width, height);
+        this.ctx.closePath();
+        this.ctx.fill();
+        
+        this.ctx.restore();
+    }
+
+    drawStars() {
+        const { width, height } = this.canvas;
+        
+        // Seed random for consistent stars
+        const starCount = 150;
+        for (let i = 0; i < starCount; i++) {
+            const x = (Math.sin(i * 12.9898) * 43758.5453) % 1 * width;
+            const y = (Math.sin(i * 78.233) * 43758.5453) % 1 * height * 0.7;
+            const size = ((Math.sin(i * 127.1) * 43758.5453) % 1) * 2 + 0.5;
+            const twinkle = Math.sin(this.time / 500 + i) * 0.3 + 0.7;
+            
+            this.ctx.save();
+            this.ctx.globalAlpha = twinkle * 0.8;
+            this.ctx.fillStyle = '#ffffff';
+            this.ctx.beginPath();
+            this.ctx.arc(x, y, size, 0, Math.PI * 2);
+            this.ctx.fill();
+            this.ctx.restore();
+        }
+    }
+
+    animate() {
+        this.time = performance.now();
+        this.drawAurora();
+        this.drawStars();
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// ---------- Particle System ----------
+class ParticleSystem {
+    constructor() {
+        this.container = document.getElementById('particles');
+        this.particles = [];
+        this.createParticles();
+    }
+
+    createParticles() {
+        const count = 30;
+        
+        for (let i = 0; i < count; i++) {
+            setTimeout(() => this.createParticle(), i * 500);
+        }
+    }
+
+    createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.random() * 4 + 2;
+        const left = Math.random() * 100;
+        const duration = Math.random() * 15 + 15;
+        const delay = Math.random() * 10;
+        
+        particle.style.cssText = `
+            width: ${size}px;
+            height: ${size}px;
+            left: ${left}%;
+            animation-duration: ${duration}s;
+            animation-delay: ${delay}s;
+        `;
+        
+        this.container.appendChild(particle);
+        this.particles.push(particle);
+        
+        // Recycle particle
+        particle.addEventListener('animationiteration', () => {
+            particle.style.left = Math.random() * 100 + '%';
+        });
+    }
+}
+
+// ---------- Initialize Application ----------
 document.addEventListener('DOMContentLoaded', () => {
+    // Start background animations
+    new AuroraCanvas();
+    new ParticleSystem();
+    
+    // Check authentication
     checkPassword();
 });
 
@@ -52,7 +204,7 @@ function verifyPassword() {
         document.getElementById('passwordOverlay').classList.add('hidden');
         initApp();
     } else {
-        errorEl.textContent = 'Incorrect password. Try again.';
+        errorEl.textContent = 'Incorrect password. Please try again.';
         document.getElementById('passwordInput').value = '';
         document.getElementById('passwordInput').focus();
         
@@ -93,12 +245,10 @@ function saveConfig() {
 }
 
 function initializeGifts() {
-    // Try to load from localStorage first
     const stored = localStorage.getItem('gifts-data');
     if (stored) {
         gifts = JSON.parse(stored);
     } else {
-        // Initialize empty gifts array
         gifts = Array.from({ length: MAX_GIFTS }, (_, i) => ({
             number: i + 1,
             child: '',
@@ -116,7 +266,6 @@ function renderTable() {
     gifts.forEach((gift, index) => {
         const row = document.createElement('tr');
         
-        // Apply filters
         const matchesKid = currentFilter.kid === 'all' || gift.child === currentFilter.kid;
         const matchesWrapped = currentFilter.wrapped === 'all' || 
             (currentFilter.wrapped === 'yes' && gift.wrapped) ||
@@ -130,7 +279,7 @@ function renderTable() {
             <td class="number">${gift.number}</td>
             <td>
                 <select data-index="${index}" data-field="child">
-                    <option value="">Select...</option>
+                    <option value="">Select child...</option>
                     ${KIDS.map(kid => `<option value="${kid}" ${gift.child === kid ? 'selected' : ''}>${kid}</option>`).join('')}
                 </select>
             </td>
@@ -139,7 +288,7 @@ function renderTable() {
                     data-index="${index}" 
                     data-field="description" 
                     value="${gift.description}" 
-                    placeholder="Gift description...">
+                    placeholder="Enter gift description...">
             </td>
             <td>
                 <input type="number" 
@@ -228,22 +377,44 @@ function updateSummary() {
     KIDS.forEach(kid => {
         const spent = totals[kid];
         const remaining = BUDGET_PER_KID - spent;
+        const percentage = Math.min((spent / BUDGET_PER_KID) * 100, 100);
         grandTotal += spent;
 
-        document.getElementById(`${kid.toLowerCase()}-spent`).textContent = spent.toFixed(2);
+        // Update spent amount
+        document.getElementById(`${kid.toLowerCase()}-spent`).textContent = spent.toFixed(0);
         
+        // Update remaining text
         const remainingEl = document.getElementById(`${kid.toLowerCase()}-remaining`);
         if (remaining < 0) {
-            remainingEl.textContent = `$${Math.abs(remaining).toFixed(2)} over budget`;
+            remainingEl.textContent = `$${Math.abs(remaining).toFixed(0)} over budget`;
             remainingEl.classList.add('over-budget');
         } else {
-            remainingEl.textContent = `$${remaining.toFixed(2)} remaining`;
+            remainingEl.textContent = `$${remaining.toFixed(0)} remaining`;
             remainingEl.classList.remove('over-budget');
+        }
+
+        // Update progress ring
+        const ring = document.getElementById(`${kid.toLowerCase()}-ring`);
+        if (ring) {
+            const circumference = 2 * Math.PI * 52; // radius = 52
+            const offset = circumference - (percentage / 100) * circumference;
+            ring.style.strokeDashoffset = offset;
+            
+            // Change color if over budget
+            if (percentage >= 100) {
+                ring.style.stroke = '#a94d61';
+            } else if (percentage >= 80) {
+                ring.style.stroke = '#d4a574';
+            } else {
+                ring.style.stroke = '#3d7a5f';
+            }
         }
     });
 
-    document.getElementById('total-spent').textContent = `$${grandTotal.toFixed(2)}`;
-    document.getElementById('total-remaining').textContent = `$${(BUDGET_PER_KID * KIDS.length - grandTotal).toFixed(2)}`;
+    // Update totals
+    document.getElementById('total-spent').textContent = `$${grandTotal.toFixed(0)}`;
+    const totalRemaining = BUDGET_PER_KID * KIDS.length - grandTotal;
+    document.getElementById('total-remaining').textContent = `$${totalRemaining.toFixed(0)}`;
 }
 
 function handleExport() {
@@ -271,17 +442,12 @@ function handleImport() {
             try {
                 const importedData = JSON.parse(event.target.result);
                 
-                // Validate the data structure
                 if (!Array.isArray(importedData)) {
                     showModal('Import Error', 'Invalid file format. Please select a valid gift data file.');
                     return;
                 }
                 
-                // Update gifts array
-                gifts = importedData;
-                
-                // Ensure all gifts have the required fields
-                gifts = gifts.map((gift, index) => ({
+                gifts = importedData.map((gift, index) => ({
                     number: gift.number || index + 1,
                     child: gift.child || '',
                     description: gift.description || '',
@@ -289,7 +455,6 @@ function handleImport() {
                     wrapped: gift.wrapped || false
                 }));
                 
-                // Pad to 100 gifts if needed
                 while (gifts.length < MAX_GIFTS) {
                     gifts.push({
                         number: gifts.length + 1,
@@ -300,7 +465,6 @@ function handleImport() {
                     });
                 }
                 
-                // Trim if too many
                 if (gifts.length > MAX_GIFTS) {
                     gifts = gifts.slice(0, MAX_GIFTS);
                 }
@@ -331,36 +495,33 @@ async function handleSaveToGitHub() {
 
     try {
         await saveToGitHub();
-        updateSyncStatus('success', 'Saved to GitHub');
+        updateSyncStatus('success', 'Saved');
         setTimeout(() => updateSyncStatus('success', 'Ready'), 2000);
     } catch (error) {
         console.error('Error saving to GitHub:', error);
-        updateSyncStatus('error', 'Error saving');
+        updateSyncStatus('error', 'Error');
         showModal('Save Error', `Failed to save to GitHub: ${error.message}`);
     }
 }
 
 function showGitHubSetupModal() {
     const modal = document.getElementById('modal');
-    document.getElementById('modalTitle').textContent = 'GitHub Setup';
-    document.getElementById('modalMessage').textContent = 'Enter your Personal Access Token to enable cloud sync:';
+    document.getElementById('modalTitle').textContent = 'Cloud Sync Setup';
+    document.getElementById('modalMessage').textContent = 'Enter your Personal Access Token to enable cloud synchronization:';
     
     document.getElementById('modalForm').innerHTML = `
-        <label>GitHub Username:</label>
-        <input type="text" value="${CONFIG.owner}" disabled style="background: #f0f0f0; cursor: not-allowed;">
+        <label>GitHub Username</label>
+        <input type="text" value="${CONFIG.owner}" disabled style="opacity: 0.5; cursor: not-allowed;">
         
-        <label>Repository Name:</label>
-        <input type="text" value="${CONFIG.repo}" disabled style="background: #f0f0f0; cursor: not-allowed;">
+        <label>Repository Name</label>
+        <input type="text" value="${CONFIG.repo}" disabled style="opacity: 0.5; cursor: not-allowed;">
         
-        <label for="githubToken">Personal Access Token:</label>
+        <label>Personal Access Token</label>
         <input type="password" id="githubToken" value="${CONFIG.token}" placeholder="ghp_..." autofocus>
-        <small style="display: block; margin-top: -0.5rem; color: var(--text-muted);">
-            Create a token at: Settings → Developer settings → Personal access tokens → Tokens (classic)
-            <br>Required permissions: repo (or just Contents: Read and write for this repo only)
-        </small>
+        <small>Create a token in GitHub: Settings → Developer settings → Personal access tokens → Tokens (classic). Required permission: repo</small>
     `;
 
-    document.getElementById('modalCancel').style.display = 'inline-block';
+    document.getElementById('modalCancel').style.display = 'flex';
     modal.classList.add('show');
 }
 
@@ -397,12 +558,12 @@ function closeModal() {
 }
 
 function updateSyncStatus(status, text) {
-    const indicator = document.querySelector('.status-indicator');
-    const statusText = document.querySelector('.status-text');
+    const dot = document.querySelector('.sync-dot');
+    const statusText = document.querySelector('.sync-text');
     
-    indicator.className = 'status-indicator';
-    if (status === 'saving') indicator.classList.add('saving');
-    if (status === 'error') indicator.classList.add('error');
+    dot.className = 'sync-dot';
+    if (status === 'saving') dot.classList.add('saving');
+    if (status === 'error') dot.classList.add('error');
     
     statusText.textContent = text;
 }
@@ -410,7 +571,6 @@ function updateSyncStatus(status, text) {
 async function saveToGitHub() {
     const url = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.dataFile}`;
     
-    // Get current file SHA if it exists
     let sha = null;
     try {
         const response = await fetch(url, {
@@ -425,10 +585,9 @@ async function saveToGitHub() {
             sha = data.sha;
         }
     } catch (error) {
-        // File might not exist yet, that's okay
+        // File might not exist yet
     }
 
-    // Save the file
     const content = btoa(JSON.stringify(gifts, null, 2));
     const body = {
         message: `Update gifts data - ${new Date().toLocaleString()}`,
@@ -460,7 +619,7 @@ async function saveToGitHub() {
 
 async function loadFromGitHub() {
     if (!CONFIG.repo || !CONFIG.owner || !CONFIG.token) {
-        return; // Not configured yet
+        return;
     }
 
     updateSyncStatus('saving', 'Loading...');
@@ -482,14 +641,13 @@ async function loadFromGitHub() {
             saveToLocalStorage();
             renderTable();
             updateSummary();
-            updateSyncStatus('success', 'Loaded from GitHub');
+            updateSyncStatus('success', 'Synced');
             setTimeout(() => updateSyncStatus('success', 'Ready'), 2000);
         } else {
-            // File doesn't exist yet, that's okay
             updateSyncStatus('success', 'Ready');
         }
     } catch (error) {
         console.error('Error loading from GitHub:', error);
-        updateSyncStatus('success', 'Ready (using local data)');
+        updateSyncStatus('success', 'Ready');
     }
 }
