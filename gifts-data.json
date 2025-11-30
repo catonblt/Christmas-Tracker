@@ -121,9 +121,9 @@
   {
     "number": 18,
     "child": "Scarlett",
-    "description": "Hair Brush",
+    "description": "Hair Brush/stocking ",
     "price": 4.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 19,
@@ -137,7 +137,7 @@
     "child": "Scarlett",
     "description": "Notebook",
     "price": 5.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 21,
