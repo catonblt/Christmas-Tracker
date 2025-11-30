@@ -95,7 +95,7 @@
     "child": "Addie",
     "description": "Rosemary Oil",
     "price": 9.82,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 15,
