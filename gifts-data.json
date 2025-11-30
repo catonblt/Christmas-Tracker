@@ -15,9 +15,9 @@
   },
   {
     "number": 3,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Renn",
+    "description": "Mouse",
+    "price": 20,
     "wrapped": false
   },
   {
