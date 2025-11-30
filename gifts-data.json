@@ -2,9 +2,9 @@
   {
     "number": 1,
     "child": "Teagan",
-    "description": "Bracelet",
+    "description": "Bracelet/stocking",
     "price": 16.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 2,
