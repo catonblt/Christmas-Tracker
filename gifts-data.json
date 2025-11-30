@@ -8,9 +8,9 @@
   },
   {
     "number": 2,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Teagan",
+    "description": "Dog",
+    "price": 20,
     "wrapped": false
   },
   {
