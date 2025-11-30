@@ -30,9 +30,9 @@
   {
     "number": 5,
     "child": "Teagan",
-    "description": "Eyelashes",
+    "description": "Eyelashes/stocking ",
     "price": 9.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 6,
@@ -130,7 +130,7 @@
     "child": "Scarlett",
     "description": "Face Masks",
     "price": 9.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 20,
