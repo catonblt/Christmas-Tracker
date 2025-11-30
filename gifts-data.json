@@ -176,17 +176,17 @@
   },
   {
     "number": 26,
-    "child": "",
-    "description": "",
-    "price": 0,
-    "wrapped": false
+    "child": "Teagan",
+    "description": "Bobby Pin Holder",
+    "price": 5.99,
+    "wrapped": true
   },
   {
     "number": 27,
-    "child": "",
-    "description": "",
-    "price": 0,
-    "wrapped": false
+    "child": "Teagan",
+    "description": "Sweat Set",
+    "price": 29.99,
+    "wrapped": true
   },
   {
     "number": 28,
