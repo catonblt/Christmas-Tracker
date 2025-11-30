@@ -53,7 +53,7 @@
     "child": "Addie",
     "description": "Eye Patches",
     "price": 12.2,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 9,
@@ -163,9 +163,9 @@
   {
     "number": 24,
     "child": "Scarlett",
-    "description": "Pez Dispenser",
+    "description": "Pez Dispenser/stocking",
     "price": 1.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 25,
