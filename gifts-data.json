@@ -81,7 +81,7 @@
     "child": "Addie",
     "description": "Gold Eye Masks",
     "price": 12.74,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 13,
