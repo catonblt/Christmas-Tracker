@@ -18,7 +18,7 @@
     "child": "Scarlett",
     "description": "Nail Polish",
     "price": 5.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 4,
