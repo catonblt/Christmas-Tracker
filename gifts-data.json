@@ -25,7 +25,7 @@
     "child": "Addie",
     "description": "Track Suit",
     "price": 19.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 5,
