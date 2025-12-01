@@ -190,10 +190,10 @@
   },
   {
     "number": 28,
-    "child": "",
-    "description": "",
-    "price": 0,
-    "wrapped": false
+    "child": "Addie",
+    "description": "Mario badrscu sprays",
+    "price": 7.99,
+    "wrapped": true
   },
   {
     "number": 29,
