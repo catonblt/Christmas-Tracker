@@ -200,21 +200,21 @@
     "child": "Addie",
     "description": "Water bottle ",
     "price": 19.99,
-    "wrapped": true
+    "wrapped": false
   },
   {
     "number": 30,
     "child": "Scarlett",
     "description": "Compact mirror/",
     "price": 7.99,
-    "wrapped": true
+    "wrapped": false
   },
   {
     "number": 31,
     "child": "Scarlett",
-    "description": "Camera",
-    "price": 49.99,
-    "wrapped": true
+    "description": "",
+    "price": 0,
+    "wrapped": false
   },
   {
     "number": 32,
