@@ -158,96 +158,7 @@ body {
         var(--midnight);
 }
 
-/* Floating Ornaments */
-.ornament {
-    position: absolute;
-    border-radius: 50%;
-    animation: ornamentFloat 6s ease-in-out infinite;
-}
-
-.ornament-1 {
-    width: 80px;
-    height: 80px;
-    top: 15%;
-    left: 10%;
-    background: radial-gradient(circle at 30% 30%, var(--cranberry-light), var(--cranberry));
-    box-shadow: 
-        inset -10px -10px 20px rgba(0, 0, 0, 0.3),
-        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
-        0 10px 30px rgba(139, 58, 76, 0.4);
-    animation-delay: 0s;
-}
-
-.ornament-1::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 15px;
-    background: var(--rose-gold);
-    border-radius: 3px 3px 0 0;
-}
-
-.ornament-2 {
-    width: 60px;
-    height: 60px;
-    top: 25%;
-    right: 15%;
-    background: radial-gradient(circle at 30% 30%, var(--rose-gold-light), var(--rose-gold-dark));
-    box-shadow: 
-        inset -8px -8px 15px rgba(0, 0, 0, 0.25),
-        inset 4px 4px 12px rgba(255, 255, 255, 0.3),
-        0 8px 25px rgba(212, 165, 116, 0.4);
-    animation-delay: -2s;
-}
-
-.ornament-2::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 12px;
-    background: var(--frost);
-    border-radius: 3px 3px 0 0;
-}
-
-.ornament-3 {
-    width: 50px;
-    height: 50px;
-    bottom: 20%;
-    left: 20%;
-    background: radial-gradient(circle at 30% 30%, var(--pine-light), var(--pine-deep));
-    box-shadow: 
-        inset -6px -6px 12px rgba(0, 0, 0, 0.3),
-        inset 3px 3px 10px rgba(255, 255, 255, 0.15),
-        0 6px 20px rgba(45, 95, 74, 0.4);
-    animation-delay: -4s;
-}
-
-.ornament-3::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 14px;
-    height: 10px;
-    background: var(--rose-gold);
-    border-radius: 3px 3px 0 0;
-}
-
-@keyframes ornamentFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(-3deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(3deg);
-    }
-}
+/* Floating Ornaments - Removed for cleaner design */
 
 /* Password Container */
 .password-container {
@@ -257,9 +168,9 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
-    padding: var(--space-3xl) var(--space-2xl);
+    padding: var(--space-2xl) var(--space-2xl);
     text-align: center;
-    max-width: 420px;
+    max-width: 380px;
     width: 90%;
     box-shadow: var(--shadow-elevated);
     animation: containerReveal 1s var(--ease-out-expo);
@@ -286,9 +197,9 @@ body {
     background-size: 400% 400%;
     border-radius: 26px;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.4;
     animation: glowRotate 8s ease infinite;
-    filter: blur(15px);
+    filter: blur(20px);
 }
 
 @keyframes glowRotate {
@@ -300,85 +211,18 @@ body {
     }
 }
 
-/* Wreath */
-.wreath {
-    position: relative;
-    width: 120px;
-    height: 120px;
+/* Lock Icon */
+.lock-icon {
+    width: 64px;
+    height: 64px;
     margin: 0 auto var(--space-lg);
+    color: var(--rose-gold);
+    opacity: 0.8;
 }
 
-.wreath-svg {
+.lock-icon svg {
     width: 100%;
     height: 100%;
-    animation: wreathSpin 60s linear infinite;
-}
-
-@keyframes wreathSpin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Bow */
-.bow {
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.bow-loop {
-    position: absolute;
-    width: 28px;
-    height: 20px;
-    background: linear-gradient(135deg, var(--cranberry-light), var(--cranberry));
-    border-radius: 50%;
-    box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.3);
-}
-
-.bow-left {
-    transform: rotate(-30deg);
-    left: -18px;
-    top: -8px;
-}
-
-.bow-right {
-    transform: rotate(30deg);
-    right: -18px;
-    top: -8px;
-}
-
-.bow-center {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: var(--cranberry);
-    border-radius: 50%;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    box-shadow: inset -2px -2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.bow-tail {
-    position: absolute;
-    width: 12px;
-    height: 35px;
-    background: linear-gradient(180deg, var(--cranberry), var(--cranberry-light));
-    top: 10px;
-}
-
-.bow-tail-left {
-    left: -8px;
-    transform: rotate(15deg);
-    border-radius: 0 0 6px 6px;
-}
-
-.bow-tail-right {
-    right: -8px;
-    transform: rotate(-15deg);
-    border-radius: 0 0 6px 6px;
 }
 
 .password-container h2 {
@@ -545,34 +389,11 @@ body {
     gap: var(--space-lg);
 }
 
-.star-burst {
-    position: relative;
-    width: 60px;
-    height: 60px;
-}
-
-.star-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 15px rgba(212, 165, 116, 0.5));
-    animation: starPulse 3s ease-in-out infinite;
-}
-
-@keyframes starPulse {
-    0%, 100% {
-        filter: drop-shadow(0 0 15px rgba(212, 165, 116, 0.5));
-        transform: scale(1) rotate(0deg);
-    }
-    50% {
-        filter: drop-shadow(0 0 25px rgba(212, 165, 116, 0.7));
-        transform: scale(1.05) rotate(5deg);
-    }
-}
-
 .title-group {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
 .title-group h1 {
@@ -582,6 +403,10 @@ body {
     color: var(--frost);
     letter-spacing: 0.03em;
     line-height: 1.1;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
 .year-badge {
@@ -589,11 +414,14 @@ body {
     padding: var(--space-xs) var(--space-md);
     background: linear-gradient(135deg, var(--rose-gold), var(--rose-gold-dark));
     color: var(--midnight);
+    font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: 20px;
     letter-spacing: 0.1em;
-    width: fit-content;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
 }
 
 .header-actions {
@@ -1031,7 +859,7 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 700px;
+    min-width: 600px;
 }
 
 thead {
@@ -1039,10 +867,10 @@ thead {
 }
 
 th {
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-md);
     text-align: left;
     font-family: var(--font-display);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: var(--rose-gold-light);
     text-transform: uppercase;
@@ -1051,24 +879,24 @@ th {
 }
 
 .col-number {
-    width: 60px;
+    width: 50px;
     text-align: center;
 }
 
 .col-child {
-    width: 160px;
+    width: 140px;
 }
 
 .col-description {
-    min-width: 250px;
+    min-width: 200px;
 }
 
 .col-price {
-    width: 120px;
+    width: 100px;
 }
 
 .col-wrapped {
-    width: 100px;
+    width: 80px;
     text-align: center;
 }
 
@@ -1086,7 +914,7 @@ tbody tr.hidden {
 }
 
 td {
-    padding: var(--space-sm) var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
     vertical-align: middle;
 }
 
@@ -1095,7 +923,7 @@ td.number {
     font-family: var(--font-display);
     font-weight: 500;
     color: rgba(232, 240, 245, 0.4);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* Table Inputs */
@@ -1103,14 +931,63 @@ td select,
 td input[type="text"],
 td input[type="number"] {
     width: 100%;
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm) var(--space-sm);
     border: 1px solid transparent;
-    border-radius: 8px;
+    border-radius: 6px;
     background: rgba(0, 0, 0, 0.2);
     color: var(--frost);
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all var(--duration-fast);
+    min-width: 0;
+}
+
+td input[type="number"] {
+    text-align: right;
+    padding-right: var(--space-sm);
+    -moz-appearance: textfield;
+}
+
+td input[type="number"]::-webkit-outer-spin-button,
+td input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Price input with dollar sign */
+.price-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all var(--duration-fast);
+}
+
+.price-input-wrapper:focus-within {
+    border-color: var(--rose-gold);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.15);
+}
+
+.price-symbol {
+    padding-left: var(--space-sm);
+    color: rgba(232, 240, 245, 0.5);
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+.price-input-wrapper input[type="number"] {
+    background: transparent;
+    border: none;
+    padding-left: 2px;
+    flex: 1;
+    min-width: 50px;
+}
+
+.price-input-wrapper input[type="number"]:focus {
+    box-shadow: none;
+    border: none;
 }
 
 td select:hover,
@@ -1135,11 +1012,11 @@ td input::placeholder {
 td select {
     cursor: pointer;
     appearance: none;
-    padding-right: var(--space-xl);
+    padding-right: var(--space-lg);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23e8f0f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 8px center;
-    background-size: 14px;
+    background-position: right 4px center;
+    background-size: 12px;
 }
 
 td select option {
@@ -1343,21 +1220,16 @@ td input[type="checkbox"]:checked::after {
     .header-content {
         flex-direction: column;
         align-items: flex-start;
-    }
-    
-    .logo-section {
-        flex-direction: column;
-        align-items: flex-start;
         gap: var(--space-md);
     }
     
-    .star-burst {
-        width: 50px;
-        height: 50px;
+    .title-group h1 {
+        font-size: 1.5rem;
     }
     
-    .title-group h1 {
-        font-size: 1.75rem;
+    .year-badge {
+        font-size: 0.75rem;
+        padding: 2px var(--space-sm);
     }
     
     .budget-grid {
@@ -1407,27 +1279,6 @@ td input[type="checkbox"]:checked::after {
     th, td {
         padding: var(--space-sm);
     }
-    
-    .ornament-1 {
-        width: 50px;
-        height: 50px;
-        top: 10%;
-        left: 5%;
-    }
-    
-    .ornament-2 {
-        width: 40px;
-        height: 40px;
-        top: 15%;
-        right: 8%;
-    }
-    
-    .ornament-3 {
-        width: 35px;
-        height: 35px;
-        bottom: 15%;
-        left: 10%;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1439,9 +1290,9 @@ td input[type="checkbox"]:checked::after {
         font-size: 1.5rem;
     }
     
-    .wreath {
-        width: 100px;
-        height: 100px;
+    .lock-icon {
+        width: 48px;
+        height: 48px;
     }
     
     .card-stats {
@@ -1460,5 +1311,9 @@ td input[type="checkbox"]:checked::after {
     
     .summary-value {
         font-size: 1.4rem;
+    }
+    
+    .title-group h1 {
+        font-size: 1.3rem;
     }
 }

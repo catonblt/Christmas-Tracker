@@ -280,7 +280,7 @@ function renderTable() {
             <td class="number">${gift.number}</td>
             <td>
                 <select data-index="${index}" data-field="child">
-                    <option value="">Select child...</option>
+                    <option value="">Select...</option>
                     ${KIDS.map(kid => `<option value="${kid}" ${gift.child === kid ? 'selected' : ''}>${kid}</option>`).join('')}
                 </select>
             </td>
@@ -289,16 +289,19 @@ function renderTable() {
                     data-index="${index}" 
                     data-field="description" 
                     value="${gift.description}" 
-                    placeholder="Enter gift description...">
+                    placeholder="Gift description...">
             </td>
             <td>
-                <input type="number" 
-                    data-index="${index}" 
-                    data-field="price" 
-                    value="${gift.price || ''}" 
-                    placeholder="0.00"
-                    step="0.01"
-                    min="0">
+                <div class="price-input-wrapper">
+                    <span class="price-symbol">$</span>
+                    <input type="number" 
+                        data-index="${index}" 
+                        data-field="price" 
+                        value="${gift.price || ''}" 
+                        placeholder="0"
+                        step="0.01"
+                        min="0">
+                </div>
             </td>
             <td style="text-align: center;">
                 <input type="checkbox" 
