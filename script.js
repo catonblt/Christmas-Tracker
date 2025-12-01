@@ -97,16 +97,17 @@ class AuroraCanvas {
         // Seed random for consistent stars
         const starCount = 150;
         for (let i = 0; i < starCount; i++) {
-            const x = (Math.sin(i * 12.9898) * 43758.5453) % 1 * width;
-            const y = (Math.sin(i * 78.233) * 43758.5453) % 1 * height * 0.7;
-            const size = ((Math.sin(i * 127.1) * 43758.5453) % 1) * 2 + 0.5;
+            // Use absolute value to ensure positive coordinates and sizes
+            const x = Math.abs((Math.sin(i * 12.9898) * 43758.5453) % 1) * width;
+            const y = Math.abs((Math.sin(i * 78.233) * 43758.5453) % 1) * height * 0.7;
+            const size = Math.abs((Math.sin(i * 127.1) * 43758.5453) % 1) * 2 + 0.5;
             const twinkle = Math.sin(this.time / 500 + i) * 0.3 + 0.7;
             
             this.ctx.save();
-            this.ctx.globalAlpha = twinkle * 0.8;
+            this.ctx.globalAlpha = Math.max(0, twinkle * 0.8);
             this.ctx.fillStyle = '#ffffff';
             this.ctx.beginPath();
-            this.ctx.arc(x, y, size, 0, Math.PI * 2);
+            this.ctx.arc(x, y, Math.max(0.5, size), 0, Math.PI * 2);
             this.ctx.fill();
             this.ctx.restore();
         }
