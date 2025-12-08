@@ -51,14 +51,14 @@
   {
     "number": 8,
     "child": "Addie",
-    "description": "Eye Patches",
+    "description": "Eye Patches/stocking ",
     "price": 12.2,
     "wrapped": true
   },
   {
     "number": 9,
     "child": "Addie",
-    "description": "Hair Wax Stick",
+    "description": "Hair Wax Stick/stocking ",
     "price": 5.49,
     "wrapped": true
   },
@@ -107,7 +107,7 @@
   {
     "number": 16,
     "child": "Addie",
-    "description": "Neato",
+    "description": "Neato/stocking ",
     "price": 9.99,
     "wrapped": true
   },
