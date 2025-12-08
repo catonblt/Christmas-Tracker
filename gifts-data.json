@@ -372,16 +372,16 @@
   },
   {
     "number": 54,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Scarlett",
+    "description": "Digital Camera",
+    "price": 49.81,
     "wrapped": false
   },
   {
     "number": 55,
     "child": "",
-    "description": "",
-    "price": 0,
+    "description": "Digital Camera Case / SD Card",
+    "price": 34.96,
     "wrapped": false
   },
   {
