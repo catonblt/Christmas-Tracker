@@ -16,7 +16,7 @@
   {
     "number": 3,
     "child": "Scarlett",
-    "description": "Nail Polish",
+    "description": "Nail Polish/stocking ",
     "price": 5.99,
     "wrapped": true
   },
@@ -205,30 +205,30 @@
   {
     "number": 30,
     "child": "Scarlett",
-    "description": "Compact mirror/",
+    "description": "Compact mirror/stocking",
     "price": 7.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 31,
     "child": "Scarlett",
     "description": "Acrylic Paint",
     "price": 10.59,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 32,
     "child": "Scarlett",
     "description": "DAS Modeling Clay",
     "price": 14.24,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 33,
     "child": "Scarlett",
     "description": "Clay Glaze",
     "price": 17.15,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 34,
@@ -247,58 +247,58 @@
   {
     "number": 36,
     "child": "Addie",
-    "description": "Makeup Bag",
+    "description": "Makeup Bag/stocking",
     "price": 6.33,
     "wrapped": false
   },
   {
     "number": 37,
     "child": "Scarlett",
-    "description": "Makeup Bag",
+    "description": "Makeup Bag/stocking ",
     "price": 6.33,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 38,
     "child": "Teagan",
     "description": "Nail Organizer Cart",
     "price": 37.88,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 39,
     "child": "Teagan",
     "description": "Gold Ring",
     "price": 12.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 40,
     "child": "Teagan",
     "description": "Sweatshirt",
     "price": 30.77,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 41,
     "child": "Teagan",
     "description": "3pk Tee Shirts",
     "price": 29.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 42,
     "child": "Teagan",
     "description": "Thumb Ring",
     "price": 12.95,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 43,
     "child": "Teagan",
     "description": "Sweatpants",
     "price": 32.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 44,
@@ -312,7 +312,7 @@
     "child": "Teagan",
     "description": "Bobby Pins",
     "price": 5.28,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 46,
@@ -333,21 +333,21 @@
     "child": "Scarlett",
     "description": "Stuffed Pig",
     "price": 31.79,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 49,
     "child": "Teagan",
     "description": "Adidas Shoes ",
     "price": 54.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 50,
     "child": "Addie",
     "description": "Headband Spraybottle Combo",
     "price": 10.59,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 51,
@@ -366,15 +366,15 @@
   {
     "number": 53,
     "child": "",
-    "description": "Camera Case / SD Card",
-    "price": 34.96,
+    "description": "",
+    "price": 0,
     "wrapped": false
   },
   {
     "number": 54,
     "child": "",
-    "description": "Digital Camera",
-    "price": 49.81,
+    "description": "",
+    "price": 0,
     "wrapped": false
   },
   {
