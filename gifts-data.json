@@ -205,7 +205,7 @@
   {
     "number": 30,
     "child": "Scarlett",
-    "description": "Compact mirror/stocking ",
+    "description": "Compact mirror/",
     "price": 7.99,
     "wrapped": false
   },
@@ -337,9 +337,9 @@
   },
   {
     "number": 49,
-    "child": "Addie",
-    "description": "Make-up headband with spray bottle ",
-    "price": 9.99,
+    "child": "Teagan",
+    "description": "Adidas Shoes ",
+    "price": 54.99,
     "wrapped": false
   },
   {
