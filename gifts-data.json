@@ -319,14 +319,14 @@
     "child": "Renn",
     "description": "RC Car",
     "price": 27.02,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 47,
     "child": "Renn",
     "description": "Excavator",
     "price": 87.44,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 48,
@@ -358,17 +358,17 @@
   },
   {
     "number": 52,
-    "child": "",
+    "child": "Renn",
     "description": "Magnet Blocks",
     "price": 104.28,
     "wrapped": false
   },
   {
     "number": 53,
-    "child": "",
-    "description": "",
+    "child": "Renn",
+    "description": "Roller Coaster Kit",
     "price": 0,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 54,
