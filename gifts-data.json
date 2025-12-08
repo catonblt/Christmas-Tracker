@@ -200,7 +200,7 @@
     "child": "Addie",
     "description": "Water bottle ",
     "price": 19.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 30,
