@@ -235,21 +235,21 @@
     "child": "Renn",
     "description": "Foam Airplane",
     "price": 8.87,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 35,
     "child": "Teagan",
     "description": "Makeup Bag/stocking ",
     "price": 6.33,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 36,
     "child": "Addie",
     "description": "Makeup Bag/stocking",
     "price": 6.33,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 37,
