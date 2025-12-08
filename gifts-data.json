@@ -268,7 +268,7 @@
   {
     "number": 39,
     "child": "Teagan",
-    "description": "Gold Rings",
+    "description": "Gold Ring",
     "price": 12.99,
     "wrapped": false
   },
@@ -351,16 +351,16 @@
   },
   {
     "number": 51,
-    "child": "",
-    "description": "",
-    "price": 0,
+    "child": "Renn",
+    "description": "Magnetiles",
+    "price": 33.91,
     "wrapped": false
   },
   {
     "number": 52,
     "child": "",
-    "description": "",
-    "price": 0,
+    "description": "Magnet Blocks",
+    "price": 104.28,
     "wrapped": false
   },
   {
