@@ -207,28 +207,28 @@
     "child": "Scarlett",
     "description": "Compact mirror/stocking",
     "price": 7.99,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 31,
     "child": "Scarlett",
     "description": "Acrylic Paint",
     "price": 10.59,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 32,
     "child": "Scarlett",
     "description": "DAS Modeling Clay",
     "price": 14.24,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 33,
     "child": "Scarlett",
     "description": "Clay Glaze",
     "price": 17.15,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 34,
@@ -256,7 +256,7 @@
     "child": "Scarlett",
     "description": "Makeup Bag/stocking ",
     "price": 6.33,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 38,
@@ -333,7 +333,7 @@
     "child": "Scarlett",
     "description": "Stuffed Pig",
     "price": 31.79,
-    "wrapped": false
+    "wrapped": true
   },
   {
     "number": 49,
